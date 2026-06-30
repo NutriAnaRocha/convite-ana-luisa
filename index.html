@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ana Luísa & Allan — 08.11.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+/* =========================================================
+   CONFIG-FRIENDLY ZONE — edite os textos/links no <script>
+   no final do arquivo, na seção "CONFIG"
+   ========================================================= */
+
+:root{
+  --cream-bg:        #eef3f4;
+  --cream-swatch:    #ece6d6;
+  --navy:            #11445f;
+  --navy-deep:       #0b2f43;
+  --gold:            #b78f49;
+  --gold-light:      #d8bd87;
+  --teal:            #1f6c78;
+  --ink-soft:        #4c6470;
+  --line:            rgba(17,68,95,0.16);
+  --shadow:          0 18px 40px -22px rgba(11,47,67,0.35);
+  --radius:          18px;
+
+  --font-script: 'Merienda', cursive;
+  --font-serif:  'Montserrat', sans-serif;
+  --font-sans:   'Montserrat', sans-serif;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--cream-bg);
+  color:var(--navy-deep);
+  font-family:var(--font-serif);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+}
+
+a{color:inherit; text-decoration:none;}
+button{font-family:inherit; cursor:pointer; border:none; background:none;}
+::selection{background:var(--gold-light); color:var(--navy-deep);}
+
+.eyebrow{
+  font-family:var(--font-sans);
+  letter-spacing:0.32em;
+  text-transform:uppercase;
+  font-size:0.72rem;
+  color:var(--gold);
+  font-weight:500;
+}
+
+.section-title{
+  font-family:var(--font-script);
+  font-size:clamp(2.6rem, 7vw, 3.6rem);
+  color:var(--navy);
+  line-height:1;
+  font-weight:900;
+}
+
+.divider{
+  display:flex; align-items:center; gap:14px;
+  width:min(360px, 70%);
+  margin:22px auto 0;
+}
+.divider span{flex:1; height:1px; background:linear-gradient(90deg, transparent, var(--gold), transparent);}
+.divider .heart{
+  width:9px; height:9px; background:var(--navy);
+  transform:rotate(45deg); border-radius:2px 0;
+  position:relative; flex:none;
+}
+.divider .heart::before, .divider .heart::after{
+  content:''; position:absolute; width:9px; height:9px; background:var(--navy); border-radius:50%;
+}
+.divider .heart::before{top:-4.5px; left:0;}
+.divider .heart::after{left:-4.5px; top:0;}
+
+/* ---------- decorative gold vine (signature element) ---------- */
+.vine-rail{
+  position:absolute; left:50%; top:0; bottom:0; width:2px;
+  transform:translateX(-50%);
+  z-index:0; pointer-events:none;
+}
+.vine-rail svg{width:100%; height:100%; display:block; overflow:visible;}
+.vine-rail path{
+  fill:none; stroke:var(--gold); stroke-width:2;
+  stroke-dasharray:1 1;
+  stroke-dashoffset:1;
+  vector-effect:non-scaling-stroke;
+}
+
+.leaf-corner{
+  position:absolute; width:clamp(120px,22vw,230px); opacity:0.9; pointer-events:none; z-index:1;
+}
+.leaf-corner svg{width:100%; height:auto; display:block;}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;
+  min-height:100svh;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center;
+  padding:8vh 6vw 10vh;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 60% 35% at 38% 38%, var(--cream-swatch) 0%, transparent 70%);
+  opacity:0.85;
+  z-index:0;
+}
+.hero .leaf-corner.tr{top:-2%; right:-4%; transform:rotate(8deg);}
+.hero .leaf-corner.bl{bottom:-4%; left:-6%; transform:rotate(-6deg) scaleX(-1);}
+
+.hero-content{position:relative; z-index:2; max-width:640px;}
+.hero .kicker{
+  font-family:var(--font-sans);
+  letter-spacing:0.4em; text-transform:uppercase;
+  font-size:0.7rem; color:var(--teal); font-weight:500;
+  opacity:0; animation:riseIn 1s ease forwards 0.1s;
+}
+.hero h1{
+  font-family:var(--font-script);
+  font-weight:900;
+  font-size:clamp(3.6rem, 13vw, 7rem);
+  color:var(--navy);
+  line-height:0.95;
+  margin-top:14px;
+  opacity:0; animation:riseIn 1.1s ease forwards 0.35s;
+}
+.hero h1 small{
+  display:block;
+  font-size:0.5em;
+  color:var(--navy-deep);
+}
+.hero .amp{color:var(--gold);}
+
+.hero .date-block{
+  margin-top:30px;
+  opacity:0; animation:riseIn 1s ease forwards 0.75s;
+}
+.hero .date-block .day{
+  font-family:var(--font-sans);
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  font-size:clamp(1.1rem, 3vw, 1.4rem);
+  color:var(--navy);
+  font-weight:500;
+}
+.hero .date-block .year{
+  font-family:var(--font-sans);
+  font-weight:600;
+  font-size:clamp(1.8rem, 5vw, 2.4rem);
+  color:var(--gold);
+  letter-spacing:0.06em;
+}
+
+.hero .welcome{
+  margin-top:28px;
+  font-size:clamp(1.02rem, 2.4vw, 1.18rem);
+  line-height:1.7;
+  color:var(--ink-soft);
+  font-style:italic;
+  opacity:0; animation:riseIn 1s ease forwards 1.05s;
+}
+
+.scroll-cue{
+  position:absolute; bottom:26px; left:50%; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:6px;
+  font-family:var(--font-sans); font-size:0.62rem; letter-spacing:0.3em;
+  text-transform:uppercase; color:var(--teal); z-index:2;
+  opacity:0; animation:riseIn 1s ease forwards 1.3s;
+}
+.scroll-cue .dot{
+  width:1px; height:34px; background:linear-gradient(var(--teal), transparent);
+  position:relative; overflow:hidden;
+}
+.scroll-cue .dot::after{
+  content:''; position:absolute; left:-1px; top:-34px; width:3px; height:10px; background:var(--gold);
+  animation:dotFall 2.2s ease-in-out infinite;
+}
+@keyframes dotFall{ 0%{top:-10px;} 100%{top:34px;} }
+@keyframes riseIn{ from{opacity:0; transform:translateY(16px);} to{opacity:1; transform:translateY(0);} }
+
+/* ---------- COUNTDOWN ---------- */
+.countdown-strip{
+  position:relative; z-index:2;
+  background:var(--navy);
+  color:#f4f1e8;
+  padding:34px 6vw;
+  display:flex; flex-wrap:wrap; justify-content:center; gap:clamp(18px,5vw,54px);
+  text-align:center;
+}
+.countdown-strip .unit{ min-width:64px; }
+.countdown-strip .num{
+  font-family:var(--font-sans); font-weight:600;
+  font-size:clamp(1.6rem,5vw,2.3rem); color:var(--gold-light);
+  font-variant-numeric:tabular-nums;
+}
+.countdown-strip .lab{
+  font-family:var(--font-sans); font-size:0.62rem; letter-spacing:0.24em;
+  text-transform:uppercase; opacity:0.78; margin-top:4px;
+}
+
+/* ---------- GENERIC SECTION ---------- */
+.section{
+  position:relative;
+  padding:min(14vh,110px) 6vw;
+  max-width:1040px; margin:0 auto;
+}
+.section-head{ text-align:center; margin-bottom:54px; }
+.section-head p.lede{
+  max-width:520px; margin:16px auto 0; color:var(--ink-soft); font-size:1.05rem; line-height:1.7;
+}
+
+.reveal{ opacity:0; transform:translateY(28px); transition:opacity 0.9s ease, transform 0.9s ease; }
+.reveal.in{ opacity:1; transform:translateY(0); }
+
+/* ---------- INFO CARDS ---------- */
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
+  gap:22px;
+}
+.card{
+  position:relative;
+  background:#fdfcf8;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:32px 26px;
+  text-align:center;
+  box-shadow:var(--shadow);
+  transition:transform 0.45s cubic-bezier(.2,.8,.2,1), box-shadow 0.45s ease, border-color 0.45s ease;
+  display:flex; flex-direction:column; align-items:center; gap:10px;
+}
+.card:hover{
+  transform:translateY(-8px);
+  border-color:var(--gold-light);
+  box-shadow:0 26px 50px -22px rgba(11,47,67,0.45);
+}
+.card .icon{
+  width:54px; height:54px; border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #fff, var(--cream-swatch));
+  display:flex; align-items:center; justify-content:center;
+  color:var(--navy); border:1px solid var(--line);
+  transition:transform 0.5s ease, background 0.5s ease;
+}
+.card:hover .icon{ transform:rotate(-8deg) scale(1.07); background:var(--gold-light); }
+.card .icon svg{ width:24px; height:24px; }
+
+.card h3{
+  font-family:var(--font-script);
+  font-size:1.7rem; color:var(--navy); font-weight:900; margin-top:4px;
+}
+.card p{ color:var(--ink-soft); font-size:0.96rem; line-height:1.55; min-height:2.6em; }
+
+.card .cta{
+  margin-top:8px;
+  font-family:var(--font-sans);
+  font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase;
+  padding:11px 22px; border-radius:30px;
+  border:1px solid var(--navy);
+  color:var(--navy);
+  display:inline-flex; align-items:center; gap:8px;
+  transition:background 0.35s ease, color 0.35s ease, transform 0.3s ease;
+}
+.card .cta:hover{ background:var(--navy); color:#fdfcf8; transform:translateY(-2px); }
+
+.card.featured{
+  background:linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+  color:#f4f1e8;
+  border-color:var(--navy);
+}
+.card.featured h3{ color:#fff; }
+.card.featured p{ color:#cfe0e6; }
+.card.featured .icon{ background:radial-gradient(circle at 35% 30%, var(--gold-light), var(--gold)); color:var(--navy-deep); border:none; }
+.card.featured .cta{ border-color:var(--gold-light); color:#fdfcf8; }
+.card.featured .cta:hover{ background:var(--gold); border-color:var(--gold); color:var(--navy-deep); }
+
+.card .sub-actions{ display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:4px; }
+
+/* address block under location card */
+.addr{
+  font-family:var(--font-sans); font-size:0.82rem; color:var(--ink-soft);
+  border-top:1px dashed var(--line); padding-top:10px; margin-top:4px; width:100%;
+}
+
+/* ---------- STORY TIMELINE ---------- */
+.timeline{
+  position:relative;
+  margin-top:10px;
+  padding-left:28px;
+  border-left:1px solid var(--line);
+}
+.t-item{ position:relative; padding:0 0 44px 26px; }
+.t-item:last-child{ padding-bottom:0; }
+.t-item::before{
+  content:''; position:absolute; left:-33px; top:4px;
+  width:11px; height:11px; border-radius:50%;
+  background:var(--cream-bg); border:2px solid var(--gold);
+}
+.t-item .t-year{ font-family:var(--font-sans); letter-spacing:0.18em; text-transform:uppercase; font-size:0.7rem; color:var(--teal); font-weight:500; }
+.t-item h4{ font-family:var(--font-script); font-size:1.7rem; color:var(--navy); font-weight:900; margin:4px 0 6px; }
+.t-item p{ color:var(--ink-soft); line-height:1.65; max-width:520px; }
+
+/* ---------- DRESS CODE ---------- */
+.dress-panel{
+  display:grid; grid-template-columns:1fr 1fr; gap:0;
+  border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);
+  border:1px solid var(--line);
+}
+@media (max-width:640px){ .dress-panel{ grid-template-columns:1fr; } }
+.dress-panel .ph{
+  background:linear-gradient(150deg, var(--teal), var(--navy-deep));
+  display:flex; align-items:center; justify-content:center; padding:48px 30px;
+}
+.dress-panel .ph svg{ width:84px; height:84px; color:#eef3f4; opacity:0.9; }
+.dress-panel .tx{ background:#fdfcf8; padding:42px 34px; display:flex; flex-direction:column; justify-content:center; gap:10px; }
+.dress-panel .tx .eyebrow{ }
+.dress-panel .tx h3{ font-family:var(--font-script); font-size:2rem; color:var(--navy); font-weight:900; }
+.dress-panel .tx p{ color:var(--ink-soft); line-height:1.7; }
+.swatches{ display:flex; gap:10px; margin-top:6px; }
+.swatch{ width:26px; height:26px; border-radius:50%; border:1px solid var(--line); }
+
+/* ---------- ACCOMMODATION / INFO BAND ---------- */
+.info-band{
+  background:var(--cream-swatch);
+  border-radius:var(--radius);
+  padding:40px clamp(24px,5vw,52px);
+  display:flex; flex-wrap:wrap; gap:30px; align-items:center; justify-content:space-between;
+}
+.info-band .left{ max-width:520px; }
+.info-band h3{ font-family:var(--font-script); font-size:2rem; color:var(--navy); font-weight:900; margin-bottom:8px; }
+.info-band p{ color:var(--ink-soft); line-height:1.7; }
+.info-band .badge{
+  font-family:var(--font-sans); font-size:0.65rem; letter-spacing:0.22em; text-transform:uppercase;
+  color:var(--gold); border:1px solid var(--gold-light); padding:8px 16px; border-radius:30px; white-space:nowrap;
+}
+
+/* ---------- RSVP FINAL CTA ---------- */
+.final-cta{
+  position:relative; text-align:center; padding:min(16vh,130px) 6vw;
+  background:var(--navy-deep); color:#f4f1e8; overflow:hidden;
+}
+.final-cta .leaf-corner{ opacity:0.18; }
+.final-cta .leaf-corner.tl{ top:-6%; left:-6%; }
+.final-cta .leaf-corner.br{ bottom:-8%; right:-6%; transform:scaleX(-1); }
+.final-cta h2{ font-family:var(--font-script); font-weight:900; font-size:clamp(2.6rem,8vw,4rem); color:#fff; position:relative; z-index:2; }
+.final-cta p{ max-width:480px; margin:16px auto 30px; color:#cfe0e6; line-height:1.7; position:relative; z-index:2; }
+.final-cta .big-cta{
+  position:relative; z-index:2;
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:var(--font-sans); letter-spacing:0.22em; text-transform:uppercase; font-size:0.78rem;
+  background:var(--gold); color:var(--navy-deep); padding:18px 38px; border-radius:40px;
+  box-shadow:0 18px 40px -14px rgba(183,143,73,0.55);
+  transition:transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+}
+.final-cta .big-cta:hover{ transform:translateY(-3px); background:var(--gold-light); box-shadow:0 24px 50px -16px rgba(183,143,73,0.7); }
+.final-cta .hashtag{
+  margin-top:26px; font-family:var(--font-sans); letter-spacing:0.18em; font-size:0.85rem; color:var(--gold-light);
+  position:relative; z-index:2;
+}
+
+footer{
+  text-align:center; padding:30px 6vw 40px; font-family:var(--font-sans);
+  font-size:0.7rem; letter-spacing:0.14em; color:var(--ink-soft); background:var(--navy-deep);
+}
+footer span{ color:var(--gold-light); }
+
+/* ---------- toast ---------- */
+.toast{
+  position:fixed; left:50%; bottom:26px; transform:translateX(-50%) translateY(140%);
+  background:var(--navy); color:#fdfcf8; font-family:var(--font-sans); font-size:0.8rem;
+  padding:13px 22px; border-radius:30px; box-shadow:var(--shadow); z-index:50;
+  transition:transform 0.45s cubic-bezier(.2,.8,.2,1);
+}
+.toast.show{ transform:translateX(-50%) translateY(0); }
+
+@media (max-width:600px){
+  .countdown-strip{ gap:16px 22px; }
+  .vine-rail{ display:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="topo">
+  <div class="leaf-corner tr" aria-hidden="true">
+    <svg viewBox="0 0 200 220" fill="none"><path d="M10 210 C 40 160, 60 120, 70 70 C 80 30, 110 10, 150 5" stroke="#b78f49" stroke-width="2"/><path d="M70 70 C 95 60, 115 45, 120 20" stroke="#b78f49" stroke-width="2"/><path d="M55 100 C 80 95, 100 80, 108 55" stroke="#b78f49" stroke-width="2"/><ellipse cx="118" cy="18" rx="13" ry="6" fill="#d8bd87" transform="rotate(35 118 18)"/><ellipse cx="103" cy="55" rx="12" ry="5.5" fill="#d8bd87" transform="rotate(25 103 55)"/><ellipse cx="92" cy="92" rx="12" ry="5.5" fill="#d8bd87" transform="rotate(20 92 92)"/><ellipse cx="42" cy="150" rx="13" ry="6" fill="#d8bd87" transform="rotate(55 42 150)"/></svg>
+  </div>
+  <div class="leaf-corner bl" aria-hidden="true">
+    <svg viewBox="0 0 200 220" fill="none"><path d="M10 210 C 40 160, 60 120, 70 70 C 80 30, 110 10, 150 5" stroke="#b78f49" stroke-width="2"/><path d="M70 70 C 95 60, 115 45, 120 20" stroke="#b78f49" stroke-width="2"/><ellipse cx="118" cy="18" rx="13" ry="6" fill="#d8bd87" transform="rotate(35 118 18)"/><ellipse cx="42" cy="150" rx="13" ry="6" fill="#d8bd87" transform="rotate(55 42 150)"/><ellipse cx="20" cy="190" rx="13" ry="6" fill="#1f6c78" transform="rotate(70 20 190)"/></svg>
+  </div>
+
+  <div class="hero-content">
+    <div class="kicker">Save the Date</div>
+    <h1><span class="names">Ana Luísa <span class="amp">&amp;</span> Allan</span></h1>
+    <div class="date-block">
+      <div class="day" id="hero-day">08 DE NOVEMBRO</div>
+      <div class="year">2026</div>
+    </div>
+    <div class="divider"><span></span><span class="heart"></span><span></span></div>
+    <p class="welcome" id="welcome-msg">Com o coração transbordando de alegria, convidamos vocês para celebrar conosco o início de uma nova história. Será uma honra ter você ao nosso lado nesse dia.</p>
+  </div>
+
+  <div class="scroll-cue"><span>role para ver mais</span><span class="dot"></span></div>
+</section>
+
+<!-- ============ COUNTDOWN ============ -->
+<div class="countdown-strip" id="countdown">
+  <div class="unit"><div class="num" id="cd-days">00</div><div class="lab">dias</div></div>
+  <div class="unit"><div class="num" id="cd-hours">00</div><div class="lab">horas</div></div>
+  <div class="unit"><div class="num" id="cd-min">00</div><div class="lab">min</div></div>
+  <div class="unit"><div class="num" id="cd-sec">00</div><div class="lab">seg</div></div>
+</div>
+
+<!-- ============ INFO CARDS ============ -->
+<section class="section" id="informacoes">
+  <div class="section-head reveal">
+    <div class="eyebrow">Tudo o que você precisa saber</div>
+    <h2 class="section-title">Informações do Casamento</h2>
+  </div>
+
+  <div class="card-grid">
+
+    <!-- Localização -->
+    <div class="card reveal">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-7.1-7-12a7 7 0 1 1 14 0c0 4.9-7 12-7 12z"/><circle cx="12" cy="9" r="2.4"/></svg></div>
+      <h3>Localização</h3>
+      <p id="venue-name">[Nome do local da cerimônia e recepção]</p>
+      <div class="sub-actions">
+        <a class="cta" id="link-maps" href="#" target="_blank" rel="noopener">Abrir no Google Maps</a>
+      </div>
+      <div class="addr" id="full-address">Endereço completo: [a definir]</div>
+    </div>
+
+    <!-- Data e horário -->
+    <div class="card reveal">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="5" width="17" height="16" rx="2.5"/><path d="M7 3v4M17 3v4M3.5 10h17"/></svg></div>
+      <h3>Data &amp; Horário</h3>
+      <p id="dt-display">08 de novembro de 2026, às 16h00</p>
+      <button class="cta" id="btn-calendar" type="button">Adicionar ao Calendário</button>
+    </div>
+
+    <!-- RSVP destacado -->
+    <div class="card featured reveal">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.8 8.6c0 5-8.8 10.6-8.8 10.6S3.2 13.6 3.2 8.6a4.8 4.8 0 0 1 8.8-2.7 4.8 4.8 0 0 1 8.8 2.7z"/></svg></div>
+      <h3>Confirme sua Presença</h3>
+      <p>Sua presença é o nosso maior presente. Confirme até a data indicada no convite.</p>
+      <a class="cta" id="link-rsvp" href="#" target="_blank" rel="noopener">Confirmar Presença</a>
+    </div>
+
+    <!-- Lista de presentes -->
+    <div class="card reveal">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="9" width="17" height="11" rx="1.5"/><path d="M3.5 9h17M12 9v11M7.5 9c-1.8 0-3-1.2-3-2.8C4.5 4.7 5.9 3.5 7.4 3.5 9.6 3.5 12 6 12 9c0-3 2.4-5.5 4.6-5.5 1.5 0 2.9 1.2 2.9 2.7 0 1.6-1.2 2.8-3 2.8"/></svg></div>
+      <h3>Lista de Presentes</h3>
+      <p>Preparamos uma lista com carinho, mas o que mais queremos é vocês conosco.</p>
+      <a class="cta" id="link-gifts" href="#" target="_blank" rel="noopener">Ver Lista</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ TRAJE ============ -->
+<section class="section" id="traje">
+  <div class="section-head reveal">
+    <div class="eyebrow">Orientações</div>
+    <h2 class="section-title">Traje Sugerido</h2>
+  </div>
+  <div class="dress-panel reveal">
+    <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 4l3 2 3-2 3 3-2.5 2.5L17 18H7l1.5-8.5L6 7z"/></svg></div>
+    <div class="tx">
+      <div class="eyebrow">Dress code</div>
+      <h3 id="dress-code">Esporte Fino</h3>
+      <p>Pedimos que os convidados venham em traje esporte fino para celebrar conosco com todo o charme que o dia merece.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOSPEDAGEM ============ -->
+<section class="section" id="hospedagem">
+  <div class="info-band reveal">
+    <div class="left">
+      <h3>Hospedagem</h3>
+      <p id="accommodation-text">Para os convidados que vêm de fora, deixamos algumas sugestões de hospedagem próximas ao local da festa. [Inserir hotéis, pousadas e condições especiais aqui.]</p>
+    </div>
+    <div class="badge">Convidados de fora</div>
+  </div>
+</section>
+
+<!-- ============ RSVP FINAL ============ -->
+<section class="final-cta" id="confirmar">
+  <div class="leaf-corner tl" aria-hidden="true">
+    <svg viewBox="0 0 200 220" fill="none"><path d="M10 210 C 40 160, 60 120, 70 70 C 80 30, 110 10, 150 5" stroke="#d8bd87" stroke-width="2"/><ellipse cx="118" cy="18" rx="13" ry="6" fill="#d8bd87" transform="rotate(35 118 18)"/><ellipse cx="42" cy="150" rx="13" ry="6" fill="#d8bd87" transform="rotate(55 42 150)"/></svg>
+  </div>
+  <div class="leaf-corner br" aria-hidden="true">
+    <svg viewBox="0 0 200 220" fill="none"><path d="M10 210 C 40 160, 60 120, 70 70 C 80 30, 110 10, 150 5" stroke="#d8bd87" stroke-width="2"/><ellipse cx="118" cy="18" rx="13" ry="6" fill="#d8bd87" transform="rotate(35 118 18)"/><ellipse cx="42" cy="150" rx="13" ry="6" fill="#d8bd87" transform="rotate(55 42 150)"/></svg>
+  </div>
+  <div class="eyebrow" style="color:#d8bd87">Estamos ansiosos</div>
+  <h2>Vamos celebrar juntos?</h2>
+  <p>Confirme sua presença para que possamos preparar cada detalhe deste dia com todo o carinho que vocês merecem.</p>
+  <a class="big-cta" id="link-rsvp-2" href="#" target="_blank" rel="noopener">Confirmar Presença ❤</a>
+  <div class="hashtag" id="hashtag-text">#AnaLuísaEAllan2026</div>
+</section>
+
+<footer>Ana Luísa <span>&amp;</span> Allan — 08 de novembro de 2026</footer>
+
+<div class="toast" id="toast">Adicionado!</div>
+
+<script>
+/* =========================================================
+   CONFIG — edite aqui os links e textos do convite
+   ========================================================= */
+const CONFIG = {
+  brideGroom: "Ana Luísa & Allan",
+  weddingDateISO: "2026-11-08T16:00:00",       // data e hora do evento (ISO, fuso local)
+  dateDisplay: "08 de novembro de 2026, às 16h00",
+  dayDisplay: "08 DE NOVEMBRO",
+  durationHours: 4,                             // duração estimada do evento p/ calendário
+
+  venueName: "Local da Festa",
+  fullAddress: "Toque em \"Google Maps\" para ver o endereço completo",
+  googleMapsLink: "https://maps.google.com/maps/place//data=!4m2!3m1!1s0x97f504d8924097:0x5614af384928418b?entry=s&sa=X&ved=2ahUKEwiWi_qE_a-VAxVCqZUCHbMQOS8Q4kB6BAgVEAA&hl=pt",
+  wazeLink: "https://maps.google.com/maps/place//data=!4m2!3m1!1s0x97f504d8924097:0x5614af384928418b?entry=s&sa=X&ved=2ahUKEwiWi_qE_a-VAxVCqZUCHbMQOS8Q4kB6BAgVEAA&hl=pt",
+
+  rsvpLink: "https://noivos.casar.com/allana08-08-2026?intro=0#/rsvp",          // link do site/formulário de confirmação de presença
+  giftListLink: "https://noivos.casar.com/allana08-08-2026?intro=0#/presentes",      // link da lista de presentes
+
+  dressCode: "Esporte Fino",
+  accommodationText: "Para os convidados que vêm de fora, deixamos algumas sugestões de hospedagem próximas ao local da festa. [Inserir hotéis, pousadas e condições especiais aqui.]",
+
+  hashtag: "#AnaLuísaEAllan2026",
+  welcomeMessage: "Com o coração transbordando de alegria, convidamos vocês para celebrar conosco o início de uma nova história. Será uma honra ter você ao nosso lado nesse dia."
+};
+
+/* ---------- aplica o CONFIG no DOM ---------- */
+document.getElementById('hero-day').textContent = CONFIG.dayDisplay;
+document.getElementById('welcome-msg').textContent = CONFIG.welcomeMessage;
+document.getElementById('venue-name').textContent = CONFIG.venueName;
+document.getElementById('full-address').textContent = 'Endereço completo: ' + CONFIG.fullAddress;
+document.getElementById('dt-display').textContent = CONFIG.dateDisplay;
+document.getElementById('dress-code').textContent = CONFIG.dressCode;
+document.getElementById('accommodation-text').textContent = CONFIG.accommodationText;
+document.getElementById('hashtag-text').textContent = CONFIG.hashtag;
+
+document.getElementById('link-maps').href = CONFIG.googleMapsLink;
+document.getElementById('link-rsvp').href = CONFIG.rsvpLink;
+document.getElementById('link-rsvp-2').href = CONFIG.rsvpLink;
+document.getElementById('link-gifts').href = CONFIG.giftListLink;
+
+/* ---------- countdown ---------- */
+const targetDate = new Date(CONFIG.weddingDateISO).getTime();
+function tickCountdown(){
+  const now = Date.now();
+  const diff = Math.max(0, targetDate - now);
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
+  document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-min').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-sec').textContent = String(s).padStart(2,'0');
+}
+tickCountdown();
+setInterval(tickCountdown, 1000);
+
+/* ---------- adicionar ao calendário (Google Calendar) ---------- */
+function pad(n){ return String(n).padStart(2,'0'); }
+function toGCalDate(date){
+  return date.getUTCFullYear() + pad(date.getUTCMonth()+1) + pad(date.getUTCDate()) + 'T' +
+         pad(date.getUTCHours()) + pad(date.getUTCMinutes()) + pad(date.getUTCSeconds()) + 'Z';
+}
+document.getElementById('btn-calendar').addEventListener('click', () => {
+  const start = new Date(CONFIG.weddingDateISO);
+  const end = new Date(start.getTime() + CONFIG.durationHours * 3600000);
+  const params = new URLSearchParams({
+    action: 'TEMPLATE',
+    text: 'Casamento — ' + CONFIG.brideGroom,
+    dates: toGCalDate(start) + '/' + toGCalDate(end),
+    location: CONFIG.fullAddress,
+    details: 'Celebração do casamento de ' + CONFIG.brideGroom + '. ' + CONFIG.hashtag
+  });
+  window.open('https://calendar.google.com/calendar/render?' + params.toString(), '_blank');
+  showToast('Calendário aberto em nova aba ✓');
+});
+
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(window.__toastTimer);
+  window.__toastTimer = setTimeout(() => t.classList.remove('show'), 2600);
+}
+
+/* ---------- scroll reveal ---------- */
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.18 });
+revealEls.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
