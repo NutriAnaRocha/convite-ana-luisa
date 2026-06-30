@@ -38,7 +38,6 @@ body{
   background:var(--cream-bg);
   color:var(--navy-deep);
   font-family:var(--font-serif);
-  letter-spacing:0.08em;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
 }
@@ -174,6 +173,7 @@ button{font-family:inherit; cursor:pointer; border:none; background:none;}
   color:var(--ink-soft);
   font-style:italic;
   opacity:0; animation:riseIn 1s ease forwards 1.05s;
+  transform:scaleX(1.35); transform-origin:center;
 }
 
 .scroll-cue{
@@ -212,6 +212,7 @@ button{font-family:inherit; cursor:pointer; border:none; background:none;}
 .countdown-strip .lab{
   font-family:var(--font-sans); font-size:0.62rem; letter-spacing:0.24em;
   text-transform:uppercase; opacity:0.78; margin-top:4px;
+  transform:scaleX(1.35); transform-origin:center; display:block;
 }
 
 /* ---------- GENERIC SECTION ---------- */
@@ -223,6 +224,7 @@ button{font-family:inherit; cursor:pointer; border:none; background:none;}
 .section-head{ text-align:center; margin-bottom:54px; }
 .section-head p.lede{
   max-width:520px; margin:16px auto 0; color:var(--ink-soft); font-size:1.05rem; line-height:1.7;
+  transform:scaleX(1.35); transform-origin:center;
 }
 
 .reveal{ opacity:0; transform:translateY(28px); transition:opacity 0.9s ease, transform 0.9s ease; }
@@ -264,7 +266,7 @@ button{font-family:inherit; cursor:pointer; border:none; background:none;}
   font-family:var(--font-script);
   font-size:1.7rem; color:var(--navy); font-weight:900; margin-top:4px;
 }
-.card p{ color:var(--ink-soft); font-size:0.96rem; line-height:1.55; min-height:2.6em; }
+.card p{ color:var(--ink-soft); font-size:0.96rem; line-height:1.55; min-height:2.6em; transform:scaleX(1.35); transform-origin:center; display:block; }
 
 .card .cta{
   margin-top:8px;
@@ -295,6 +297,7 @@ button{font-family:inherit; cursor:pointer; border:none; background:none;}
 .addr{
   font-family:var(--font-sans); font-size:0.82rem; color:var(--ink-soft);
   border-top:1px dashed var(--line); padding-top:10px; margin-top:4px; width:100%;
+  transform:scaleX(1.35); transform-origin:center;
 }
 
 /* ---------- STORY TIMELINE ---------- */
@@ -313,7 +316,7 @@ button{font-family:inherit; cursor:pointer; border:none; background:none;}
 }
 .t-item .t-year{ font-family:var(--font-sans); letter-spacing:0.18em; text-transform:uppercase; font-size:0.7rem; color:var(--teal); font-weight:500; }
 .t-item h4{ font-family:var(--font-script); font-size:1.7rem; color:var(--navy); font-weight:900; margin:4px 0 6px; }
-.t-item p{ color:var(--ink-soft); line-height:1.65; max-width:520px; }
+.t-item p{ color:var(--ink-soft); line-height:1.65; max-width:520px; transform:scaleX(1.35); transform-origin:left; }
 
 /* ---------- DRESS CODE ---------- */
 .dress-panel{
@@ -330,7 +333,7 @@ button{font-family:inherit; cursor:pointer; border:none; background:none;}
 .dress-panel .tx{ background:#fdfcf8; padding:42px 34px; display:flex; flex-direction:column; justify-content:center; gap:10px; }
 .dress-panel .tx .eyebrow{ }
 .dress-panel .tx h3{ font-family:var(--font-script); font-size:2rem; color:var(--navy); font-weight:900; }
-.dress-panel .tx p{ color:var(--ink-soft); line-height:1.7; }
+.dress-panel .tx p{ color:var(--ink-soft); line-height:1.7; transform:scaleX(1.35); transform-origin:left; }
 .swatches{ display:flex; gap:10px; margin-top:6px; }
 .swatch{ width:26px; height:26px; border-radius:50%; border:1px solid var(--line); }
 
@@ -358,7 +361,7 @@ button{font-family:inherit; cursor:pointer; border:none; background:none;}
 .final-cta .leaf-corner.tl{ top:-6%; left:-6%; }
 .final-cta .leaf-corner.br{ bottom:-8%; right:-6%; transform:scaleX(-1); }
 .final-cta h2{ font-family:var(--font-script); font-weight:900; font-size:clamp(2.6rem,8vw,4rem); color:#fff; position:relative; z-index:2; }
-.final-cta p{ max-width:480px; margin:16px auto 30px; color:#cfe0e6; line-height:1.7; position:relative; z-index:2; }
+.final-cta p{ max-width:480px; margin:16px auto 30px; color:#cfe0e6; line-height:1.7; position:relative; z-index:2; transform:scaleX(1.35); transform-origin:center; }
 .final-cta .big-cta{
   position:relative; z-index:2;
   display:inline-flex; align-items:center; gap:10px;
