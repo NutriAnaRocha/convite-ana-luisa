@@ -6,7 +6,7 @@
 <title>Ana Luísa & Allan — 08.11.2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
 
 /* =========================================================
@@ -28,8 +28,8 @@
   --radius:          18px;
 
   --font-script: 'Merienda', cursive;
-  --font-serif:  'Montserrat', sans-serif;
-  --font-sans:   'Montserrat', sans-serif;
+  --font-serif:  'Bebas Neue Pro', 'Bebas Neue', sans-serif;
+  --font-sans:   'Bebas Neue Pro', 'Bebas Neue', sans-serif;
 }
 
 *{box-sizing:border-box; margin:0; padding:0;}
@@ -489,17 +489,6 @@ footer span{ color:var(--gold-light); }
   </div>
 </section>
 
-<!-- ============ HOSPEDAGEM ============ -->
-<section class="section" id="hospedagem">
-  <div class="info-band reveal">
-    <div class="left">
-      <h3>Hospedagem</h3>
-      <p id="accommodation-text">Para os convidados que vêm de fora, deixamos algumas sugestões de hospedagem próximas ao local da festa. [Inserir hotéis, pousadas e condições especiais aqui.]</p>
-    </div>
-    <div class="badge">Convidados de fora</div>
-  </div>
-</section>
-
 <!-- ============ RSVP FINAL ============ -->
 <section class="final-cta" id="confirmar">
   <div class="leaf-corner tl" aria-hidden="true">
@@ -539,8 +528,6 @@ const CONFIG = {
   giftListLink: "https://noivos.casar.com/allana08-08-2026?intro=0#/presentes",      // link da lista de presentes
 
   dressCode: "Esporte Fino",
-  accommodationText: "Para os convidados que vêm de fora, deixamos algumas sugestões de hospedagem próximas ao local da festa. [Inserir hotéis, pousadas e condições especiais aqui.]",
-
   hashtag: "#AnaLuísaEAllan2026",
   welcomeMessage: "Com o coração transbordando de alegria, convidamos vocês para celebrar conosco o início de uma nova história. Será uma honra ter você ao nosso lado nesse dia."
 };
@@ -552,7 +539,6 @@ document.getElementById('venue-name').textContent = CONFIG.venueName;
 document.getElementById('full-address').textContent = 'Endereço completo: ' + CONFIG.fullAddress;
 document.getElementById('dt-display').textContent = CONFIG.dateDisplay;
 document.getElementById('dress-code').textContent = CONFIG.dressCode;
-document.getElementById('accommodation-text').textContent = CONFIG.accommodationText;
 document.getElementById('hashtag-text').textContent = CONFIG.hashtag;
 
 document.getElementById('link-maps').href = CONFIG.googleMapsLink;
